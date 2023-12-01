@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="{% static 'home/images/favicon.ico' %}" />
+  <link href="{% static 'home/css/index.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- <form action="{% url 'home:index' }" autocomplete="off" method="get"> -->
+  <form id="search-form" action="{% url 'zdict:search' %}" autocomplete="off" method="get">
+    <center>
+      <div class="logo">
+        <img alt="Google" height="92" src="{% static '/home/images/logo.png' %}"
+          srcset="{% static '/home/images/logo.png' %} 1x, {% static '/home/images/logo.png' %} 2x" width="272" />
+      </div>
+
+      <div class="bar">
+        <div class="bar-div">
+          <div class="search-icon-div">
+            <div class="search-icon-div2">
+              <span class="search-icon-span" style="height:20px;line-height:20px;width:20px">
+                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                  </path>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="searchbar-div">
+            <textarea class="searchbar-textarea" maxlength="2048" id="dict-search" name="q" rows="1"
+              aria-activedescendant="" aria-autocomplete="both" aria-controls="Alh6id" aria-expanded="false"
+              aria-haspopup="both" aria-owns="Alh6id" autocapitalize="off" autocomplete="off" autocorrect="off"
+              autofocus="" role="combobox" spellcheck="false" type="search" title="搜索" style></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="button" type="submit">Google Search</button>
+        <button class="button" type="submit">I'm Feeling Lucky</button>
+      </div>
+    </center>
+  </form>
+
+  <script type="text/javascript">
+    // 获取 textarea 元素和表单元素
+    var textarea = document.getElementById('dict-search');
+    var form = document.getElementById('search-form');
+    // 监听键盘事件
+    textarea.addEventListener('keydown', function (event) {
+      // 检查是否按下了回车键 (keyCode 13 是回车键的键码)
+      if (event.keyCode === 13) {
+        // 阻止默认的回车键行为（防止换行）
+        event.preventDefault();
+        // 执行表单提交
+        form.submit();
+      }
+    });
+  </script>
+</body>
+
+</html>

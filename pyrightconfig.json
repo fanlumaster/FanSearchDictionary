@@ -1,0 +1,13 @@
+{
+  "disableLanguageServices": ["pylint"],
+  "useLibraryCodeForTypes": true,
+  "reportMissingImports": false,
+  "reportMissingTypeStubs": false,
+  "reportGeneralTypeIssues": false,
+  "venvPath": ".venv",
+  "venv": ".venv",
+  "typeCheckingMode": "off",
+  "usePyrightExtensions": true,
+  "include": ["src/**/*.py"],
+  "exclude": ["**/*.test.py", "**/*.spec.py"]
+}

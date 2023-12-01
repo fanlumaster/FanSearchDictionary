@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link href="css/style.css" rel="stylesheet"> -->
+</head>
+
+<body>
+  <p>{{ content }}</p>
+  {% for item in content %}
+  <h1>{{ item.term_name }}</h1>
+  <div>
+    <h3>拼音</h3>
+    <h5>{{ item.hanyu_pinyin }}</h5>
+  </div>
+  <h3>释义</h3>
+  <p>{{ item.interpretation }}</p>
+  {% endfor %}
+
+</body>
+
+</html>
